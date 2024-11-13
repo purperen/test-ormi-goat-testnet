@@ -1,0 +1,6 @@
+type Quote @entity(immutable: true) {
+  id: ID!
+  current: BigInt! # uint256
+  updatedAt: BigInt! # uint256
+}
+

@@ -1,0 +1,8 @@
+{
+  "goat-testnet": {
+    "MinimalOracleBTC": {
+      "address": "0x0c1e9C0d4a25f5A949252becF256cd6A05F74627",
+      "startBlock": 499565
+    }
+  }
+}

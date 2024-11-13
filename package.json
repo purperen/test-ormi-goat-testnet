@@ -1,0 +1,19 @@
+{
+  "name": "goat-testnet",
+  "license": "MIT",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "create-local": "graph create --node http://localhost:8020/ goat-testnet",
+    "remove-local": "graph remove --node http://localhost:8020/ goat-testnet",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 goat-testnet",
+    "deploy": "graph deploy MinimalOracleBTC --node https://api.goat.0xgraph.xyz/deploy --ipfs https://api.goat.0xgraph.xyz/ipfs --network=goat-testnet"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "^0.89.0",
+    "@graphprotocol/graph-ts": "^0.32.0"
+  },
+  "devDependencies": {
+    "matchstick-as": "0.5.0"
+  }
+}
