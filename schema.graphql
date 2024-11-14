@@ -4,6 +4,14 @@ type Quote @entity(immutable: true) {
   updatedAt: BigInt! # uint256
 }
 
+type GrantRole @entity(immutable: true) {
+  id: ID!
+  role: Bytes! # bytes32
+  grantee: Bytes! # address
+  granter: Bytes! # address
+  grantedAt: BigInt! # uint256
+}
+
 type Clone @entity(immutable: true) {
   id: ID!
   newInstance: Bytes! # address

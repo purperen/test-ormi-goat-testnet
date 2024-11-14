@@ -37,13 +37,13 @@ dataSources:
       language: wasm/assemblyscript
       entities:
         - Quote
-        - Clone
+        - RoleGrant
       abis:
         - name: MinimalOracle
           file: ./abis/MinimalOracle.json
       eventHandlers:
-        - event: Cloned(address)
-          handler: handleCloned
+        - event: RoleGranted(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleGranted
       callHandlers:
         - function: updateQuote(uint256)
           handler: handleUpdateQuote
