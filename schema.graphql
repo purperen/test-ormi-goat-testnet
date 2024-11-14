@@ -4,3 +4,8 @@ type Quote @entity(immutable: true) {
   updatedAt: BigInt! # uint256
 }
 
+type Clone @entity(immutable: true) {
+  id: ID!
+  newInstance: Bytes! # address
+  clonedAt: BigInt! # uint256
+}

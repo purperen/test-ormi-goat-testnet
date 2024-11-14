@@ -5,6 +5,26 @@ schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum
+    name: MinimalOracleImplementation
+    network: goat-testnet
+    source:
+      address: "0xa557b3aBCB93e43e67Acf7C3D4eE712178ea2206"
+      abi: MinimalOracle
+      startBlock: 499563
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Clone
+      abis:
+        - name: MinimalOracle
+          file: ./abis/MinimalOracle.json
+      eventHandlers:
+        - event: Cloned(address)
+          handler: handleCloned
+      file: ./src/minimal-oracle.ts
+  - kind: ethereum
     name: MinimalOracleBTC
     network: goat-testnet
     source:
@@ -17,9 +37,13 @@ dataSources:
       language: wasm/assemblyscript
       entities:
         - Quote
+        - Clone
       abis:
         - name: MinimalOracle
           file: ./abis/MinimalOracle.json
+      eventHandlers:
+        - event: Cloned(address)
+          handler: handleCloned
       callHandlers:
         - function: updateQuote(uint256)
           handler: handleUpdateQuote

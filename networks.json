@@ -1,5 +1,9 @@
 {
   "goat-testnet": {
+    "MinimalOracleImplementation": {
+      "address": "0xa557b3aBCB93e43e67Acf7C3D4eE712178ea2206",
+      "startBlock": 499563
+    },
     "MinimalOracleBTC": {
       "address": "0x0c1e9C0d4a25f5A949252becF256cd6A05F74627",
       "startBlock": 499565
